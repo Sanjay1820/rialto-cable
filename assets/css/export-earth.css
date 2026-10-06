@@ -1,0 +1,15 @@
+.homepage1-body .at-global-visual.export-earth{min-height:430px;display:flex;flex-direction:column;justify-content:center;gap:22px;isolation:isolate}
+.export-earth .earth-stage{position:relative;width:min(380px,90vw);aspect-ratio:1;max-width:100%;border-radius:50%;background:radial-gradient(circle,#0d547740 40%,#31b8e11c 63%,transparent 72%)}
+.export-earth .earth-stage::before{content:'';position:absolute;inset:10%;border-radius:50%;box-shadow:0 0 40px 12px #2695ba22}
+.export-earth .earth-stage::after{content:'';position:absolute;left:20%;right:20%;bottom:-10px;height:22px;background:#174f6940;filter:blur(15px);border-radius:50%;pointer-events:none}
+.export-earth .earth-canvas{position:relative;display:block;width:100%;height:100%;cursor:grab;touch-action:none;border-radius:50%;outline-offset:5px}
+.export-earth .earth-canvas:focus-visible{outline:2px solid #008bb6}
+.export-earth .earth-canvas.is-dragging{cursor:grabbing}
+.homepage1-body .export-earth .earth-caption{position:static;display:flex;align-items:center;gap:12px;padding:10px 18px;background:#ffffffb3;border:1px solid #ffffff;border-radius:40px;box-shadow:0 8px 25px #184e6910}
+.homepage1-body .export-earth .earth-caption strong{position:static;font-size:30px;line-height:1;letter-spacing:-.05em;color:#072b43}
+.homepage1-body .export-earth .earth-caption span{position:static;font-size:9px;letter-spacing:.15em;color:#087ea4;line-height:1.7}
+.export-earth .earth-controls{display:flex;align-items:center;gap:14px;color:#527a8d;font-size:11px}
+.export-earth .earth-toggle{border:1px solid #88b4c5;border-radius:50%;width:30px;height:30px;background:#ffffff70;color:#075c7b;cursor:pointer;display:grid;place-items:center;padding:0;font-size:12px}
+.export-earth .earth-toggle:hover{background:#fff}
+.export-earth .earth-toggle:focus-visible{outline:2px solid #087ea4;outline-offset:3px}
+@media(max-width:767px){.homepage1-body .at-global-visual.export-earth{min-height:380px;gap:17px}.export-earth .earth-stage{width:min(330px,85vw)}}

@@ -1,0 +1,66 @@
+/* Original blue/cyan logo on a white panel, matching the brand reference. */
+.homepage1-body > header { position: sticky; top: 0; z-index: 1000; }
+.homepage1-body > header .header-area { position: relative; top: auto; }
+.homepage1-body .site-logo a { display: inline-flex; align-items: center; padding: 9px 12px; background: #fff; border-radius: 4px; }
+.homepage1-body .site-logo img { display: block; width: 200px; height: auto; max-width: 100%; }
+@media (max-width: 650px) {
+  .homepage1-body .site-logo a { padding: 7px 8px; }
+  .homepage1-body .site-logo img { width: 132px; height: auto; }
+}
+/* Visible by default: animation is an enhancement, never a content gate. */
+.homepage1-body .about-images-area { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 16px; }
+.homepage1-body .about-images-area .img1 { grid-column: 1 / -1; }
+.homepage1-body .about-images-area .img1 img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 12px; }
+.homepage1-body .about-images-area .img2 { position: static; grid-column: 2; grid-row: 2; width: 100%; border: 1px solid #dce9f0; border-radius: 12px; background: #edf5f9; box-shadow: 0 10px 25px #1426370c; }
+.homepage1-body .about-images-area .img2 img { display: block; width: 100%; height: 170px; object-fit: contain; padding: 12px; }
+.homepage1-body .about-images-area .conter-area { position: static; grid-column: 1; grid-row: 2; inset: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 170px; padding: 20px 14px; border-radius: 12px; box-shadow: 0 10px 25px #0096cc20; }
+.homepage1-body .about-images-area .conter-area h3 { font-size: 44px; margin-bottom: 10px; }
+.homepage1-body .about-images-area .conter-area p { font-size: 11px; line-height: 1.6; }
+@media (max-width: 575px) {
+  .homepage1-body .about-images-area { gap: 12px; }
+  .homepage1-body .about-images-area .img2 img { height: 140px; padding: 8px; }
+  .homepage1-body .about-images-area .conter-area { min-height: 140px; padding: 16px 10px; }
+  .homepage1-body .about-images-area .conter-area h3 { font-size: 36px; }
+  .homepage1-body .about-images-area .conter-area p { font-size: 10px; }
+}
+.engineering-media { margin: 0; overflow: hidden; border: 1px solid #dce7ee; border-radius: 14px; background: #fff; box-shadow: 0 14px 35px #14263712; }
+.engineering-media .engineering-image { display: block; width: 100%; height: auto; object-fit: contain; }
+.engineering-caption { display: flex; align-items: center; gap: 16px; padding: 20px 22px; border-top: 3px solid #0096cc; }
+.engineering-caption-icon { display: inline-grid; place-items: center; flex-shrink: 0; width: 46px; height: 46px; border-radius: 10px; color: #0096cc; background: #e9f6fb; font-size: 24px; }
+.engineering-caption strong { display: block; font-size: 15px; line-height: 1.5; color: #142637; }
+.engineering-caption div > span { display: block; margin-top: 3px; font-size: 12px; line-height: 1.6; color: #64748b; }
+@media (max-width: 575px) {
+  .engineering-caption { padding: 16px; gap: 12px; }
+  .engineering-caption strong { font-size: 13px; }
+  .engineering-caption-icon { width: 40px; height: 40px; font-size: 21px; }
+}
+.homepage1-body [data-reveal] { opacity: 1; visibility: visible; }
+.homepage1-body [data-reveal].is-revealed { animation: home-section-reveal var(--reveal-duration, 700ms) ease-out both; }
+@keyframes home-section-reveal {
+  from { opacity: .85; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.where-we-lead .wwl-feature { position: relative; isolation: isolate; overflow: hidden; height: 100%; min-height: 410px; padding: 28px 22px; border-radius: 14px; color: #fff; background: #0b2031 url('../img/hero/welding-background-v2.webp') 35% center/cover; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 12px 35px #07182720; }
+.wwl-feature::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #051725aa 0%, #05172550 40%, #051725ed 100%); }
+.wwl-feature .wwl-feature-label { color: #a1e6fa; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin: 0; }
+.where-we-lead .wwl-feature .wwl-image { display: block; width: 100%; height: auto; max-height: 260px; object-fit: contain; border-radius: 0; box-shadow: none; margin: 22px 0; filter: drop-shadow(0 15px 20px #0007); }
+.wwl-feature h3 { color: #fff; font-size: 25px; line-height: 1.2; font-weight: 700; margin: 0 0 8px; }
+.wwl-feature p { color: #cadbe7; font-size: 12px; line-height: 1.6; margin: 0; }
+.testimonial4-section-area .testimonial-header { padding-right: 24px; }
+.testimonial4-section-area .catalog-carousel { min-width: 0; }
+.testimonial4-section-area .catalog-carousel:not(.slick-initialized) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.homepage1-body .catalog-card-link:focus-visible .catalog-hover-overlay { opacity: 1; visibility: visible; }
+.homepage1-body .contact1-section-area .row > div { min-width: 0; }
+.homepage1-body .contact-info-pill .icon { flex-shrink: 0; }
+.homepage1-body .contact-info-pill .text { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 991px) {
+  .where-we-lead .wwl-feature { min-height: 360px; max-width: 600px; margin: auto; }
+  .testimonial4-section-area .testimonial-header { padding: 0; margin-bottom: 32px; }
+}
+@media (max-width: 575px) {
+  .where-we-lead .wwl-feature { min-height: 340px; }
+  .testimonial4-section-area .catalog-carousel:not(.slick-initialized) { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage1-body [data-reveal].is-revealed { animation: none; }
+}

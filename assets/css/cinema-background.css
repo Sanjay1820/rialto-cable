@@ -1,0 +1,19 @@
+/* A moving photographic backdrop, local and dependency-free. */
+.rc-hero::before{background:#071c2a}.rc-hero::after{display:none}
+.cinema-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#071c2a}
+.cinema-image{position:absolute;inset:-5%;width:110%;height:110%;max-width:none;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.7s ease;transform-origin:center;animation:cinema-pan 26s ease-in-out infinite alternate;filter:saturate(.9)}
+.cinema-image.is-current{opacity:1}
+.cinema-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#04132070,#061c298c 28%,#061c29a8 50%,#061c298c 72%,#04132060),linear-gradient(0deg,#071b28f5 0%,#071b285c 38%,#071b2877 70%,#071b28b8 100%);z-index:3}
+.cinema-cable{position:absolute;left:-130px;bottom:65px;width:600px;max-width:47%;opacity:.1;filter:blur(1px) drop-shadow(0 0 28px #96d4e450);transform:rotate(-26deg);animation:cinema-cable 19s ease-in-out infinite alternate;z-index:2}
+.cinema-beam{position:absolute;inset:-30%;background:linear-gradient(110deg,transparent 38%,#83dbed0b 44%,#c0eff410 45%,transparent 52%);transform:translateX(-20%);animation:cinema-beam 16s ease-in-out infinite alternate;z-index:2}
+.cinema-particles{position:absolute;inset:0;z-index:4}.cinema-particles i{position:absolute;left:var(--x);bottom:-15px;width:var(--size);height:var(--size);background:#c6edf3;border-radius:50%;box-shadow:0 0 8px #93d8e7;opacity:0;animation:cinema-particle var(--duration) var(--delay) linear infinite}
+.cinema-toggle{position:absolute;right:6%;top:15px;z-index:8;display:inline-flex;align-items:center;gap:7px;border:1px solid #aed5e530;background:#061c296b;backdrop-filter:blur(8px);color:#b3ccd8;padding:7px 10px;border-radius:20px;font-size:8px;cursor:pointer}.cinema-toggle:hover{background:#20475b;color:#fff}.cinema-toggle span{font-size:9px}
+.cinema-toggle[hidden]{display:none}
+.rc-hero .rc-title{text-shadow:0 3px 18px #0004}.rc-hero .rc-description{color:#c1d5de;text-shadow:0 1px 8px #0008}.rc-hero .rc-tags span{background:#061c2955;color:#b2cedb;border-color:#b2cedb33}.rc-hero .rc-visual::before{background:radial-gradient(ellipse,#aacecd80,#729ba546 45%,transparent 72%)}.rc-hero .rc-navigation{background:#071b2833}.rc-hero .rc-assurance{background:#061827e6}.rc-world{background:#071e2c80;border-radius:10px;border:1px solid #aacdd526;padding:7px 9px;backdrop-filter:blur(8px)}
+.rc-hero.cinema-idle .cinema-bg *,.rc-hero.cinema-paused .cinema-bg *{animation-play-state:paused!important}
+@keyframes cinema-pan{from{transform:scale(1.03) translate(-1.2%,-.5%)}to{transform:scale(1.12) translate(1.2%,1%)}}
+@keyframes cinema-cable{from{transform:translate(-25px,10px) rotate(-26deg)}to{transform:translate(70px,-35px) rotate(-19deg)}}
+@keyframes cinema-beam{from{transform:translateX(-12%) rotate(-4deg)}to{transform:translateX(14%) rotate(4deg)}}
+@keyframes cinema-particle{0%{opacity:0;transform:translate(0,0)}15%{opacity:.4}75%{opacity:.3}100%{opacity:0;transform:translate(70px,-800px)}}
+@media(max-width:650px){.cinema-toggle{top:9px;right:6%;padding:5px 8px;font-size:7px}.rc-hero .rc-slide,.rc-hero .rc-slide.is-active{padding-top:45px}.cinema-image{object-position:35% center;animation-duration:30s}.cinema-cable{left:-95px;max-width:70%;bottom:200px;opacity:.07}.cinema-bg::after{background:linear-gradient(0deg,#071b28eb,#071b28a3 45%,#071b28b0),linear-gradient(90deg,#04132055,transparent)}.rc-world{padding:7px 9px}.rc-world-planet,.rc-world canvas{width:150px}}
+@media(prefers-reduced-motion:reduce){.cinema-bg *{animation:none!important;transition:none!important}.cinema-particles,.cinema-beam{display:none}}

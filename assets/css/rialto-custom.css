@@ -1,0 +1,1260 @@
+/* ==========================================================================
+   ZNERGY CABLE DESIGN SYSTEM - APPLIED TO RIALTO CABLES
+   Color Combination, Layout, Typography, Vertical Sliders & Dynamic Effects
+   Matches https://www.znergycable.com/home exactly with Rialto's content.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --ztc-family-font1: "Figtree", sans-serif;
+  --ztc-family-font2: "Outfit", sans-serif;
+
+  /* Znergy Authentic Brand Colors */
+  --ztc-text-text-1: #ffffff;
+  --ztc-text-text-2: #0096cc;      /* Znergy Electric Cyan Blue */
+  --ztc-text-text-3: #060404;
+  --ztc-text-text-4: #5a5454;
+  --ztc-text-text-5: #142637;      /* Dark Slate Heading */
+  --ztc-text-text-6: #525455;
+  --ztc-text-text-7: #0a0400;
+  --ztc-text-text-8: #5f5c5a;
+  --ztc-text-text-9: #ec631a;      /* Copper Orange Accent */
+  --ztc-text-text-10: #01060e;
+  
+  --ztc-bg-bg-1: #f3f5f7;          /* Clean Light Gray */
+  --ztc-bg-bg-4: #2c3c4b;
+  --ztc-bg-bg-11: #0096cc;
+  --bg-blue-color: #003471;        /* Znergy Royal Deep Navy Blue */
+  --bg-dark-footer: #0b1c2d;       /* Footer Navy */
+  
+  --ztc-border-border-1: #f0f0f0;
+  --ztc-border-border-2: #dfdcdc;
+  
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   AOS ANIMATION SAFETY: Only override if AOS fails to load at all.
+   Normal AOS scroll animations work fully. Only activates on .no-aos-fallback.
+   ========================================================================== */
+.no-aos-fallback [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* ==========================================================================
+   SMOOTH SCROLL & GLOBAL TRANSITION ENHANCEMENTS (Znergy Cable Style)
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* AOS animated elements get a premium easing feel */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Ensure sections themselves don't clip AOS children */
+section {
+  overflow: visible;
+}
+
+/* Service section is the exception — clips the blue overlay properly */
+.service1-section-area,
+.hero2-section-area {
+  overflow: hidden;
+}
+
+/* Base Typography */
+body {
+  font-family: var(--ztc-family-font1);
+  color: var(--ztc-text-text-5);
+  background-color: #ffffff;
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ztc-family-font1);
+  color: var(--ztc-text-text-5);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--ztc-text-text-2);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: #00739e;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR (Matches Znergy Cable Dark Slate Header)
+   ========================================================================== */
+.znergy-topbar {
+  background: #081321;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  padding: 8px 0;
+  color: #94a3b8;
+}
+
+.znergy-topbar a {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.znergy-topbar a:hover {
+  color: var(--ztc-text-text-2);
+}
+
+.header-area {
+  position: sticky;
+  top: 0;
+  background: #142637;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.header-elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.site-logo img {
+  height: 46px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.site-logo img:hover {
+  transform: scale(1.03);
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+}
+
+.main-menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.main-menu li {
+  position: relative;
+}
+
+.main-menu li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 14px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.main-menu li a:hover,
+.main-menu li.active > a {
+  color: var(--ztc-text-text-2) !important;
+  background: rgba(0, 150, 204, 0.12);
+}
+
+/* Znergy Mega Menu (Cables & Products) */
+.main-menu .mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  width: 950px;
+  background: #ffffff;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px 30px;
+  padding: 28px 32px;
+  list-style: none;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid var(--ztc-border-border-1);
+  opacity: 0;
+  visibility: hidden;
+  display: none !important;
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+.main-menu li:hover > .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  display: grid !important;
+  transform: translateX(-50%) translateY(2px);
+}
+
+.mega-menu li {
+  display: block;
+}
+
+.mega-menu li a {
+  display: block;
+  padding: 6px 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #2b3a4b !important;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.mega-menu li a:hover {
+  color: var(--ztc-text-text-2) !important;
+  background: transparent;
+  transform: translateX(4px);
+}
+
+.mega-col-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ztc-text-text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ztc-text-text-2);
+}
+
+/* Header Action Buttons */
+.header-btn1 {
+  font-family: var(--ztc-family-font1);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ztc-text-text-1) !important;
+  background: var(--ztc-text-text-2);
+  padding: 12px 22px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 150, 204, 0.35);
+  transition: var(--transition-smooth);
+}
+
+.header-btn1:hover {
+  color: #ffffff !important;
+  background: #007ba8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 150, 204, 0.45);
+}
+
+.header-btn1 i {
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.header-btn1:hover i {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   HERO SECTION 2: EXACT DARK NAVY BACKGROUND MATCHING USER SCREENSHOT
+   ========================================================================== */
+.hero2-section-area {
+  position: relative;
+  z-index: 1;
+  padding: 100px 0 80px;
+  background-color: #142637;
+  background-image: url('../img/homehero.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero-header h5 {
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 7px 16px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-header .tg-element-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 22px;
+  letter-spacing: -0.5px;
+}
+
+.hero-header p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #cbd5e1;
+  margin-bottom: 35px;
+  max-width: 580px;
+}
+
+.hero-header .btn-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header-btn3.btn2 {
+  font-family: var(--ztc-family-font1);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: var(--ztc-text-text-2);
+  padding: 15px 28px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 150, 204, 0.35);
+  transition: var(--transition-smooth);
+}
+
+.header-btn3.btn2:hover {
+  background: #007ba8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 150, 204, 0.45);
+}
+
+.header-btn4 {
+  font-family: var(--ztc-family-font1);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 28px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.header-btn4:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   HERO 2 DUAL VERTICAL MARQUEE SLIDER (Znergy Vertical Showcase)
+   ========================================================================== */
+.hero2-images-area {
+  position: relative;
+  height: 540px;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.hero2-images-area .circle2.keyframe5 {
+  position: absolute;
+  top: -20px;
+  right: 50px;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: rotateGlobe 40s linear infinite;
+}
+
+@keyframes rotateGlobe {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero2-images-area::before,
+.hero2-images-area::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero2-images-area::before {
+  top: 0;
+  background: linear-gradient(to bottom, #142637 0%, rgba(20, 38, 55, 0) 100%);
+}
+
+.hero2-images-area::after {
+  bottom: 0;
+  background: linear-gradient(to top, #142637 0%, rgba(20, 38, 55, 0) 100%);
+}
+
+.marquee-col-wrap {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.vertical-marquee-track {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: scrollVertical 24s linear infinite;
+}
+
+.vertical-marquee-track.track-reverse {
+  animation: scrollVertical 28s linear infinite reverse;
+}
+
+.vertical-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.hero-cable-card {
+  background: #182a3d;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-smooth);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-cable-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(0, 150, 204, 0.35);
+  border-color: rgba(0, 150, 204, 0.5);
+}
+
+.hero-cable-card .img-box {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: #0d1b2a;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.hero-cable-card .img-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.hero-cable-card:hover .img-box img {
+  transform: scale(1.08);
+}
+
+.hero-cable-card .card-caption {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 4px;
+}
+
+.hero-cable-card .card-subtext {
+  font-size: 11.5px;
+  color: var(--ztc-text-text-2) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   ABOUT 1 SECTION: WHO WE ARE (Matches Znergy Who We Are)
+   ========================================================================== */
+.about1-section-area {
+  padding: 70px 0;
+}
+
+.about-images-area {
+  position: relative;
+}
+
+.about-images-area .img1 img {
+  width: 90%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-images-area .img2 {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  width: 65%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 4px solid #ffffff;
+}
+
+.about-images-area .img2 img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.about-images-area .conter-area {
+  background: var(--ztc-text-text-2);
+  display: inline-block;
+  text-align: center;
+  padding: 24px 28px;
+  border-radius: 8px;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  box-shadow: 0 10px 25px rgba(0, 150, 204, 0.35);
+  z-index: 5;
+}
+
+.about-images-area .conter-area h3 {
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.about-images-area .conter-area p {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  opacity: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 30px;
+}
+
+.about-checklist li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2b3a4b;
+}
+
+.about-checklist li i {
+  color: var(--ztc-text-text-2);
+  font-size: 18px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   INDUSTRIES WE SERVE SECTION (Matches Znergy Blue Section #003471)
+   ========================================================================== */
+.bg-blue-color {
+  background-color: var(--bg-blue-color) !important;
+}
+
+.service1-section-area {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0 60px;
+}
+
+.service-auhtor-boxarea {
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  overflow: hidden; /* Ensures image zoom and overlays never leak out of section */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  height: 425px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2 Side Animated Blue Lines (Top from Left, Bottom from Right) */
+.service-auhtor-boxarea::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--ztc-text-text-2);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.service-auhtor-boxarea::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 4px;
+  background: var(--ztc-text-text-2);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.service-auhtor-boxarea:hover::before,
+.service-auhtor-boxarea:hover::after {
+  width: 100%;
+}
+
+.service-auhtor-boxarea:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Top Image Container with Top-Down Blue Overlay */
+.service-auhtor-boxarea .img1 {
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  background: #081a2e;
+  position: relative;
+  z-index: 1;
+}
+
+.service-auhtor-boxarea .img1::after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: var(--ztc-text-text-2);
+  opacity: 0.45;
+  transition: height 0.4s ease-in-out;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.service-auhtor-boxarea:hover .img1::after {
+  height: 100%;
+}
+
+.service-auhtor-boxarea .img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-auhtor-boxarea:hover .img1 img {
+  transform: scale(1.12) rotate(-3deg);
+}
+
+/* Bottom Content Container with Bottom-Up Blue Fill */
+.service-auhtor-boxarea .content-area {
+  padding: 44px 22px 25px;
+  text-align: center;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.service-auhtor-boxarea .content-area::after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: var(--ztc-text-text-2);
+  transition: height 0.4s ease-in-out;
+  z-index: -1;
+  border-radius: 0 0 6px 6px;
+}
+
+.service-auhtor-boxarea:hover .content-area::after {
+  height: 100%;
+}
+
+/* Circular Number Badge (Overlaps Image and Content Area) */
+.service-auhtor-boxarea .content-area h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  height: 62px;
+  width: 62px;
+  text-align: center;
+  line-height: 62px;
+  background: #003471;
+  border-radius: 50%;
+  margin: -68px auto 14px auto;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  border: 3px solid #ffffff;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-auhtor-boxarea:hover .content-area h3 {
+  background: #ffffff !important;
+  color: #003471 !important;
+  border-color: var(--ztc-text-text-2) !important;
+  transform: scale(1.08);
+}
+
+.service-auhtor-boxarea .content-area a {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ztc-text-text-5);
+  margin-bottom: 8px;
+  line-height: 1.35;
+  transition: color 0.4s ease;
+}
+
+.service-auhtor-boxarea:hover .content-area a {
+  color: #ffffff !important;
+}
+
+.service-auhtor-boxarea .content-area p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.service-auhtor-boxarea:hover .content-area p {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ==========================================================================
+   WHY RIALTO SECTION (Matches Znergy .whyz-card)
+   ========================================================================== */
+.whyz-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+  text-align: center;
+  border: 1px solid var(--ztc-border-border-1);
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.whyz-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.09);
+  border-color: rgba(0, 150, 204, 0.3);
+}
+
+.whyz-icon {
+  width: 76px;
+  height: 76px;
+  background: #e6f3fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+
+.whyz-icon i {
+  font-size: 32px;
+  color: var(--ztc-text-text-2);
+}
+
+.whyz-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ztc-text-text-5);
+}
+
+.whyz-card p {
+  font-size: 14.5px;
+  color: #555555;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   WHERE WE LEAD / SPECIALISATION (Matches Znergy .where-we-lead)
+   ========================================================================== */
+.where-we-lead {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.where-we-lead .wwl-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 36px 30px;
+  height: 100%;
+  transition: all 0.4s ease;
+  border: 3px solid var(--ztc-text-text-2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.where-we-lead .wwl-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 150, 204, 0.15);
+}
+
+.where-we-lead .wwl-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ztc-text-text-2);
+}
+
+.where-we-lead .wwl-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.where-we-lead .wwl-image {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.where-we-lead .wwl-image:hover {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   MANUFACTURING MODEL (Matches Znergy .zmfg-wrap)
+   ========================================================================== */
+.zmfg-wrap {
+  padding: 80px 0;
+  background: #f1f5f9;
+}
+
+.zmfg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.zmfg-badge {
+  display: inline-block;
+  background: rgba(0, 150, 204, 0.12);
+  color: var(--ztc-text-text-2);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.zmfg-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--ztc-text-text-5);
+}
+
+.zmfg-intro {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.zmfg-subtitle {
+  font-size: 17px;
+  font-weight: 800;
+  display: block;
+  margin: 14px 0 10px;
+  color: var(--ztc-text-text-5);
+}
+
+.zmfg-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.zmfg-list li {
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.zmfg-footer {
+  margin: 15px 0 25px;
+  padding-top: 18px;
+  border-top: 2px solid var(--ztc-text-text-2);
+}
+
+.zmfg-footer-bold {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ztc-text-text-5);
+}
+
+.zmfg-footer-note {
+  font-size: 13.5px;
+  color: #64748b;
+  font-style: italic;
+  margin: 0;
+}
+
+.read-button {
+  font-family: var(--ztc-family-font1);
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: var(--ztc-text-text-2);
+  padding: 14px 24px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: var(--transition-smooth);
+}
+
+.read-button:hover {
+  background: #007ba8;
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+.zmfg-card img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================================
+   CATALOGS & CERTIFICATES (Matches Znergy .testimonial4-section-area)
+   ========================================================================== */
+.testimonial4-section-area {
+  position: relative;
+  z-index: 1;
+  padding: 85px 0;
+  background: var(--ztc-bg-bg-1);
+  overflow: hidden;
+}
+
+.testimonial4-section-area .testimonial-header h5 {
+  color: var(--ztc-text-text-2);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+  display: inline-block;
+  background: rgba(0, 150, 204, 0.08);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.testimonial4-section-area .testimonial-header .tg-element-title {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ztc-text-text-5);
+  margin-bottom: 18px;
+}
+
+.testimonial4-section-area .testimonial-header p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+.testimonial-slider-boxarea4 {
+  position: relative;
+}
+
+.testimonial-slider-boxarea4 .slick-list {
+  overflow: hidden;
+  margin: 0 -12px;
+}
+
+.testimonial-slider-boxarea4 .slick-slide {
+  padding: 0 12px;
+}
+
+.tesimonial-slider {
+  background: #ffffff;
+  position: relative;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.tesimonial-slider:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 150, 204, 0.2);
+  border-color: var(--ztc-text-text-2);
+}
+
+.catalog-cover-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #f8fafc;
+}
+
+.testimonial4-section-area .testimonial-img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+}
+
+.tesimonial-slider:hover .testimonial-img {
+  transform: scale(1.03);
+}
+
+.catalog-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 30, 49, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  border-radius: 6px;
+}
+
+.catalog-hover-overlay span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--ztc-text-text-2);
+  padding: 10px 20px;
+  border-radius: 4px;
+  transform: translateY(10px);
+  transition: transform 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tesimonial-slider:hover .catalog-hover-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tesimonial-slider:hover .catalog-hover-overlay span {
+  transform: translateY(0);
+}
+
+.catalog-slider-nav-btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.catalog-arrow-btn {
+  height: 48px;
+  width: 48px;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--ztc-text-text-5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.catalog-arrow-btn:hover {
+  background: var(--ztc-text-text-2);
+  color: #ffffff;
+  border-color: var(--ztc-text-text-2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 150, 204, 0.3);
+}
+
+/* ==========================================================================
+   CONTACT SECTION (Matches Znergy .contact1-section-area)
+   ========================================================================== */
+.contact1-section-area {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #003471 0%, #001f44 100%);
+  color: #ffffff;
+}
+
+.contact1-section-area h2 {
+  color: #ffffff;
+}
+
+.contact-info-pill {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-info-pill .icon {
+  width: 48px;
+  height: 48px;
+  background: var(--ztc-text-text-2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.contact-info-pill .text {
+  font-size: 15px;
+}
+
+.contact-info-pill .text a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contact-info-pill .text a:hover {
+  color: var(--ztc-text-text-2);
+}
+
+/* ==========================================================================
+   FOOTER (Matches Znergy Deep Navy Footer)
+   ========================================================================== */
+.znergy-footer {
+  background: var(--bg-dark-footer);
+  color: #94a3b8;
+  padding: 70px 0 30px;
+  font-size: 14.5px;
+}
+
+.znergy-footer h4 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.znergy-footer h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--ztc-text-text-2);
+}
+
+.znergy-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.znergy-footer ul li {
+  margin-bottom: 10px;
+}
+
+.znergy-footer ul li a {
+  color: #cbd5e1;
+  transition: var(--transition-smooth);
+}
+
+.znergy-footer ul li a:hover {
+  color: var(--ztc-text-text-2);
+  padding-left: 5px;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+  margin-top: 50px;
+  font-size: 13.5px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-header .tg-element-title {
+    font-size: 34px;
+  }
+  .zmfg-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero2-images-area {
+    margin-top: 40px;
+  }
+}

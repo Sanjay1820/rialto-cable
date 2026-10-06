@@ -1,0 +1,18 @@
+# Local previews, browser profiles and source backups
+/_tools/
+/raw_pages/
+/.vscode/
+/.codex/
+/.agents/
+/.vercel/
+/test_ripples.html
+/scratch_znergy_main.css
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+node_modules/

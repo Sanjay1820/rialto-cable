@@ -1,0 +1,31 @@
+/* Product-led gallery: title above, large cable stage, light information bar. */
+.rc-hero .rc-stage{min-height:720px;max-width:1440px}
+.rc-hero .rc-slide,.rc-hero .rc-slide.is-active{min-height:720px;padding:39px 6% 26px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;gap:13px;align-items:start}
+.rc-hero .rc-copy{grid-column:1;grid-row:1;width:66%;min-height:168px;max-width:830px;text-align:left;padding:0;justify-self:start;background:none;border:0;box-shadow:none}
+.rc-hero .rc-eyebrow{justify-content:flex-start;font-size:8px;letter-spacing:.15em;margin-bottom:17px}
+.rc-hero .rc-title{font-size:clamp(38px,3.7vw,54px);line-height:1.06;letter-spacing:-.045em;margin:0;color:#fff}
+.rc-hero .rc-title br{display:block}.rc-hero .rc-title span{display:inline;color:#a2e9bd}
+.rc-hero .rc-visual{grid-column:1;grid-row:2;width:100%;max-width:none;height:335px;min-height:335px;margin:0;display:flex;align-items:center;justify-content:center}
+.rc-hero .rc-visual img{width:auto;height:320px;max-width:85%;max-height:320px;object-fit:contain;filter:drop-shadow(0 25px 20px #0008)}
+.rc-hero .rc-visual::before{width:800px;max-width:95%;height:300px;top:10px;background:radial-gradient(ellipse,#dcece4a0,#b5d8d340 48%,transparent 74%);filter:blur(15px)}
+.rc-hero .rc-visual::after{bottom:12px;width:48%;max-width:600px}
+.rc-hero .rc-watermark{left:50%;top:36px;transform:translateX(-50%);font-size:clamp(80px,13vw,190px);letter-spacing:.035em;-webkit-text-stroke:1px #c6e5db30;max-width:100%;overflow:hidden}
+.rc-hero .rc-product-label{left:0;right:auto;bottom:5px;transform:none;width:190px;padding:10px 0;border-top:1px solid #b8dbca55;display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.rc-hero .rc-product-label strong{font-size:12px;color:#f2f7f4}.rc-hero .rc-product-label span{max-width:100%;text-align:left;font-size:8px;margin:0;color:#a1c5bc}
+.rc-detail{grid-column:1;grid-row:3;display:grid;grid-template-columns:1.3fr .9fr 1.1fr;gap:25px;align-items:center;background:#f2f6f4f2;border:1px solid #ffffffa0;border-radius:5px;padding:24px 27px;box-shadow:0 15px 30px #0001;position:relative;z-index:4;min-height:111px}
+.rc-hero .rc-detail .rc-description{font-size:11px;line-height:1.8;color:#547067;text-shadow:none;margin:0;max-width:none;text-align:left}
+.rc-hero .rc-detail .rc-tags{justify-content:flex-start;gap:6px;margin:0;border-left:1px solid #c6d9d2;padding-left:20px}
+.rc-hero .rc-detail .rc-tags span{color:#466f60;background:#e4efea;border-color:#d0e2d8;padding:6px 9px;font-size:8px}
+.rc-hero .rc-detail .rc-actions{justify-content:flex-end;gap:17px;flex-wrap:wrap}
+.rc-hero .rc-detail .rc-primary{background:#153b30;color:#d5f5e0;font-size:10px;padding:13px 17px;gap:20px}
+.rc-hero .rc-detail .rc-primary:hover{background:#268367;color:#fff}.rc-hero .rc-detail .rc-secondary{color:#365b4d;border-color:#a9c4b7;font-size:10px}
+.rc-slide.is-active .rc-detail{animation:gallery-strip .7s .25s both}
+.rc-world{position:absolute;left:auto;right:6%;top:39px;bottom:auto;width:290px;height:155px;margin:0;border:1px solid #b5d5cb38;gap:7px;background:#0a202b70;border-radius:9px;padding:7px 9px;z-index:4}
+.rc-world-planet,.rc-world canvas{width:155px;height:145px}.rc-world-copy strong{font-size:15px}.rc-world-copy p{font-size:8px}.rc-world-kicker{font-size:6px}
+.cinema-toggle{top:13px;right:6%;font-size:7px;padding:4px 9px}
+.rc-hero .rc-navigation{border:0;padding-top:3px;padding-bottom:21px}
+@keyframes gallery-strip{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1100px){.rc-hero .rc-copy{width:62%}.rc-hero .rc-title{font-size:45px}.rc-world{width:260px;gap:0}.rc-world-planet,.rc-world canvas{width:145px;height:145px}.rc-world-copy strong{font-size:13px}.rc-detail{grid-template-columns:1.15fr .9fr 1fr;gap:18px;padding:21px}.rc-hero .rc-detail .rc-actions{gap:10px}.rc-hero .rc-detail .rc-primary{font-size:9px;padding:12px 13px;gap:13px}}
+@media(max-width:850px){.rc-hero .rc-copy{width:59%}.rc-hero .rc-title{font-size:39px}.rc-world{width:245px}.rc-world-planet,.rc-world canvas{width:135px;height:145px}.rc-detail{grid-template-columns:1fr 1fr}.rc-hero .rc-detail .rc-tags{display:none}.rc-hero .rc-detail .rc-description{font-size:10px}.rc-hero .rc-visual img{height:300px;max-height:300px}.rc-hero .rc-product-label{width:150px;bottom:0}.rc-hero .rc-product-label strong{font-size:10px}}
+@media(max-width:650px){.rc-hero .rc-stage{min-height:0}.rc-hero .rc-slide,.rc-hero .rc-slide.is-active{min-height:0;display:grid;padding:40px 6% 20px;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;gap:22px}.rc-hero .rc-copy{grid-column:1;grid-row:1;min-height:0;width:100%;text-align:left}.rc-hero .rc-title{font-size:clamp(34px,10vw,43px);margin:0;line-height:1.08}.rc-hero .rc-eyebrow{font-size:6px;letter-spacing:.11em;margin-bottom:17px;justify-content:flex-start}.rc-hero .rc-visual{grid-column:1;grid-row:2;width:100%;max-width:none;height:295px;min-height:295px}.rc-hero .rc-visual img{height:auto;width:110%;max-width:110%;max-height:245px}.rc-hero .rc-visual::before{width:115%;max-width:none;height:240px;top:0}.rc-hero .rc-watermark{font-size:65px;top:70px}.rc-hero .rc-product-label{width:100%;left:0;bottom:0;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:15px;padding:10px 0}.rc-hero .rc-product-label span{max-width:48%;font-size:7px;text-align:right}.rc-detail{grid-column:1;grid-row:3;grid-template-columns:minmax(0,1fr);gap:17px;padding:23px 20px;border-radius:6px}.rc-hero .rc-detail .rc-description{font-size:11px;line-height:1.85}.rc-hero .rc-detail .rc-tags{display:flex;border-left:0;padding:0}.rc-hero .rc-detail .rc-actions{justify-content:flex-start;gap:16px}.rc-hero .rc-detail .rc-primary{font-size:10px;padding:13px 15px}.rc-hero .rc-detail .rc-secondary{font-size:9px}.rc-world{position:relative;top:auto;bottom:auto;left:auto;right:auto;width:auto;max-width:none;height:150px;margin:0 6% 23px;gap:17px;padding:7px 13px}.rc-world-planet,.rc-world canvas{width:150px;height:140px}.rc-world-copy strong{font-size:16px}.rc-world-copy p{font-size:9px}.rc-world-kicker{font-size:7px}.cinema-toggle{top:10px}}
+@media(prefers-reduced-motion:reduce){.rc-slide.is-active .rc-detail{animation:none}}
